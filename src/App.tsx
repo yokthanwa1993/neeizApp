@@ -35,7 +35,7 @@ const AppContent = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="w-full max-w-sm mx-auto">
+      <div className="w-full">
         <Routes>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/callback" element={<LineCallback />} />

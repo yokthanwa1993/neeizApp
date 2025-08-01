@@ -117,7 +117,7 @@ const HomeScreen = () => {
     <div className="min-h-screen bg-gray-50 pb-20">
       
       
-      <main className="p-4 space-y-6">
+      <main className="px-4 sm:px-6 lg:px-8 py-6 space-y-6">
         <section>
           {renderWelcomeSection()}
         </section>
@@ -145,10 +145,10 @@ const HomeScreen = () => {
 
         <section>
           <h2 className="text-xl font-bold mb-4">สำหรับคุณโดยเฉพาะ</h2>
-          <Carousel opts={{ loop: true }} className="w-full -mx-2">
-            <CarouselContent>
+          <Carousel opts={{ loop: true }} className="w-full">
+            <CarouselContent className="-ml-2">
               {featuredJobs.map((job) => (
-                <CarouselItem key={job.id} className="md:basis-1/2 lg:basis-1/3 px-2">
+                <CarouselItem key={job.id} className="md:basis-1/2 lg:basis-1/3 pl-2">
                   <Card className="overflow-hidden h-full">
                     <img src={job.image} alt={job.title} className="w-full h-32 object-cover"/>
                     <CardHeader>
@@ -166,10 +166,10 @@ const HomeScreen = () => {
 
         <section>
           <h2 className="text-xl font-bold mb-4">ประกาศล่าสุด</h2>
-           <Carousel opts={{ loop: true }} className="w-full -mx-2">
-            <CarouselContent>
+           <Carousel opts={{ loop: true }} className="w-full">
+            <CarouselContent className="-ml-2">
               {banners.map((banner) => (
-                <CarouselItem key={banner.id} className="px-2">
+                <CarouselItem key={banner.id} className="pl-2">
                   <Card className="relative overflow-hidden aspect-video">
                     <img src={banner.image} alt={banner.alt} className="w-full h-full object-cover"/>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-6 flex flex-col justify-end">
