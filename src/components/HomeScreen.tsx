@@ -100,7 +100,7 @@ const HomeScreen = () => {
       );
     }
     return (
-      <Card className="text-center">
+      <Card className="text-center bg-gray-50 border-0">
         <CardHeader>
           <CardTitle>ยินดีต้อนรับสู่ Neeiz</CardTitle>
           <CardDescription>แพลตฟอร์มหางานสำหรับคุณ</CardDescription>
@@ -114,29 +114,27 @@ const HomeScreen = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
-      
-      
+    <div className="min-h-screen bg-white pb-20">
       <main className="px-4 sm:px-6 lg:px-8 py-6 space-y-6">
         <section>
           {renderWelcomeSection()}
         </section>
 
         <section>
-          <h2 className="text-xl font-bold mb-4">เข้าถึงด่วน</h2>
+          <h2 className="text-xl font-bold mb-4 text-gray-800">เข้าถึงด่วน</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {quickAccessTiles.map((tile) => {
               const Icon = tile.icon;
               return (
                 <Card 
                   key={tile.title} 
-                  className="flex flex-col items-center justify-center p-4 text-center cursor-pointer hover:shadow-lg transition-shadow"
+                  className="flex flex-col items-center justify-center p-4 text-center cursor-pointer hover:shadow-lg transition-shadow bg-gray-50 border-0"
                   onClick={() => navigate(tile.path)}
                 >
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
-                  <p className="text-sm font-semibold">{tile.title}</p>
+                  <p className="text-sm font-semibold text-gray-700">{tile.title}</p>
                 </Card>
               );
             })}
@@ -144,15 +142,15 @@ const HomeScreen = () => {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold mb-4">สำหรับคุณโดยเฉพาะ</h2>
+          <h2 className="text-xl font-bold mb-4 text-gray-800">สำหรับคุณโดยเฉพาะ</h2>
           <Carousel opts={{ loop: true }} className="w-full">
             <CarouselContent className="-ml-2">
               {featuredJobs.map((job) => (
                 <CarouselItem key={job.id} className="md:basis-1/2 lg:basis-1/3 pl-2">
-                  <Card className="overflow-hidden h-full">
+                  <Card className="overflow-hidden h-full bg-gray-50 border-0">
                     <img src={job.image} alt={job.title} className="w-full h-32 object-cover"/>
                     <CardHeader>
-                      <CardTitle>{job.title}</CardTitle>
+                      <CardTitle className="text-gray-800">{job.title}</CardTitle>
                       <CardDescription>{job.description}</CardDescription>
                     </CardHeader>
                   </Card>
@@ -165,12 +163,12 @@ const HomeScreen = () => {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold mb-4">ประกาศล่าสุด</h2>
+          <h2 className="text-xl font-bold mb-4 text-gray-800">ประกาศล่าสุด</h2>
            <Carousel opts={{ loop: true }} className="w-full">
             <CarouselContent className="-ml-2">
               {banners.map((banner) => (
                 <CarouselItem key={banner.id} className="pl-2">
-                  <Card className="relative overflow-hidden aspect-video">
+                  <Card className="relative overflow-hidden aspect-video rounded-lg">
                     <img src={banner.image} alt={banner.alt} className="w-full h-full object-cover"/>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-6 flex flex-col justify-end">
                       <h3 className="text-white text-xl font-bold">{banner.title}</h3>
