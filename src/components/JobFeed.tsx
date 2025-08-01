@@ -49,16 +49,23 @@ const JobFeed = () => {
 
         <section className="py-4">
           <div className="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-hide">
-            {categories.map((cat) => (
-              <Button
-                key={cat}
-                variant={activeCategory === cat ? 'default' : 'ghost'}
-                onClick={() => setActiveCategory(cat)}
-                className={`rounded-full whitespace-nowrap ${activeCategory === cat ? 'bg-primary text-black hover:bg-primary/90' : 'text-gray-800'}`}
-              >
-                {cat}
-              </Button>
-            ))}
+            {categories.map((cat) => {
+              const isActive = activeCategory === cat;
+              return (
+                <Button
+                  key={cat}
+                  variant="ghost"
+                  onClick={() => setActiveCategory(cat)}
+                  className={`rounded-full whitespace-nowrap ${
+                    isActive
+                      ? 'bg-primary text-black hover:bg-primary/90'
+                      : 'text-gray-800'
+                  }`}
+                >
+                  {cat}
+                </Button>
+              );
+            })}
             <Button variant="link" className="text-primary">ดูทั้งหมด</Button>
           </div>
         </section>
