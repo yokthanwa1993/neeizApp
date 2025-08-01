@@ -54,7 +54,7 @@ const JobFeed = () => {
                 key={cat}
                 variant={activeCategory === cat ? 'default' : 'ghost'}
                 onClick={() => setActiveCategory(cat)}
-                className={`rounded-full whitespace-nowrap ${activeCategory === cat ? 'bg-primary hover:bg-primary/90' : 'text-gray-500'}`}
+                className={`rounded-full whitespace-nowrap ${activeCategory === cat ? 'bg-primary hover:bg-primary/90' : 'text-gray-800'}`}
               >
                 {cat}
               </Button>
