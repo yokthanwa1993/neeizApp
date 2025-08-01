@@ -91,7 +91,7 @@ const MyShifts = () => {
       
       
       {/* Shifts List */}
-      <div className="p-4">
+      <div className="px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex justify-between items-center mb-4">
           <h2 className="font-bold text-lg">งานที่กำลังจะมาถึง</h2>
           <span className="text-gray-500 text-sm">{shifts.length} งาน</span>
