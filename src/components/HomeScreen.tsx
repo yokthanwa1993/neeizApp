@@ -145,11 +145,11 @@ const HomeScreen = () => {
 
         <section>
           <h2 className="text-xl font-bold mb-4">สำหรับคุณโดยเฉพาะ</h2>
-          <Carousel opts={{ loop: true }} className="w-full">
+          <Carousel opts={{ loop: true }} className="w-full -mx-2">
             <CarouselContent>
               {featuredJobs.map((job) => (
-                <CarouselItem key={job.id} className="md:basis-1/2 lg:basis-1/3">
-                  <Card className="overflow-hidden">
+                <CarouselItem key={job.id} className="md:basis-1/2 lg:basis-1/3 px-2">
+                  <Card className="overflow-hidden h-full">
                     <img src={job.image} alt={job.title} className="w-full h-32 object-cover"/>
                     <CardHeader>
                       <CardTitle>{job.title}</CardTitle>
@@ -166,10 +166,10 @@ const HomeScreen = () => {
 
         <section>
           <h2 className="text-xl font-bold mb-4">ประกาศล่าสุด</h2>
-           <Carousel opts={{ loop: true }} className="w-full">
+           <Carousel opts={{ loop: true }} className="w-full -mx-2">
             <CarouselContent>
               {banners.map((banner) => (
-                <CarouselItem key={banner.id}>
+                <CarouselItem key={banner.id} className="px-2">
                   <Card className="relative overflow-hidden aspect-video">
                     <img src={banner.image} alt={banner.alt} className="w-full h-full object-cover"/>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-6 flex flex-col justify-end">
