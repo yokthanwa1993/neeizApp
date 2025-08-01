@@ -24,7 +24,7 @@ const JobFeed = () => {
     <div className="min-h-screen bg-white pb-20">
       
 
-      <main className="px-4 sm:px-6 lg:px-8 py-6">
+      <main className="px-6 sm:px-8 lg:px-12 py-6">
         <section className="pb-6">
           <h1 className="text-4xl font-bold text-gray-800 leading-tight">
             ค้นหางาน

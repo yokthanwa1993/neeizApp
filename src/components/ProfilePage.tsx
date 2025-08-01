@@ -306,7 +306,7 @@ const ProfilePage: React.FC = () => {
     <div className="min-h-screen bg-yellow-50 pb-20">
       
       
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 py-6">
         {/* Profile Header */}
         <div className="bg-gradient-to-r from-yellow-400 to-amber-500 rounded-2xl p-6 mb-6 relative overflow-hidden">
           {/* Background decoration */}

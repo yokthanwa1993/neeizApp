@@ -70,7 +70,7 @@ const Wallet = () => {
       
       
       {/* Balance Card */}
-      <div className="px-4 sm:px-6 lg:px-8 py-6">
+      <div className="px-6 sm:px-8 lg:px-12 py-6">
         <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
           <div className="flex items-center mb-4">
             <WalletIcon className="text-[#f5c518] mr-2" size={24} />
