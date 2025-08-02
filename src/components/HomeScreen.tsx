@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Calendar, Wallet, User, Briefcase, ArrowRight, MapPin } from 'lucide-react';
+import { ArrowRight, MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import BottomNavigation from './BottomNavigation';
@@ -42,18 +42,6 @@ const HomeScreen = () => {
       setLocation("เบราว์เซอร์ไม่รองรับ Geolocation");
     }
   }, []);
-
-  const quickAccessTiles = user ? [
-    { title: 'งานของฉัน', icon: Calendar, path: '/my-shifts' },
-    { title: 'กระเป๋าเงิน', icon: Wallet, path: '/wallet' },
-    { title: 'ค้นหางาน', icon: Search, path: '/jobs' },
-    { title: 'โปรไฟล์', icon: User, path: '/profile' },
-  ] : [
-    { title: 'ค้นหางาน', icon: Search, path: '/jobs' },
-    { title: 'งานประจำ', icon: Briefcase, path: '/full-time-jobs' },
-    { title: 'เข้าสู่ระบบ', icon: User, path: '/login' },
-    { title: 'สมัครสมาชิก', icon: User, path: '/register' },
-  ];
 
   const featuredJobs = [
     { id: 1, title: 'โปรโมชั่นพิเศษ', description: 'รับโบนัสเพิ่ม 500 บาท', image: 'https://images.unsplash.com/photo-1607863680198-23d4b2565df0?w=400&h=200&fit=crop&crop=center' },
@@ -118,27 +106,6 @@ const HomeScreen = () => {
       <main className="px-6 sm:px-8 lg:px-12 py-6 space-y-6">
         <section>
           {renderWelcomeSection()}
-        </section>
-
-        <section>
-          <h2 className="text-xl font-bold mb-4 text-gray-800">เข้าถึงด่วน</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {quickAccessTiles.map((tile) => {
-              const Icon = tile.icon;
-              return (
-                <Card 
-                  key={tile.title} 
-                  className="flex flex-col items-center justify-center p-4 text-center cursor-pointer hover:shadow-lg transition-shadow bg-gray-50 border-0"
-                  onClick={() => navigate(tile.path)}
-                >
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
-                    <Icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <p className="text-sm font-semibold text-gray-700">{tile.title}</p>
-                </Card>
-              );
-            })}
-          </div>
         </section>
 
         <section>
