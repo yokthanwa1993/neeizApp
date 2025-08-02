@@ -93,7 +93,6 @@ const HomeScreen = () => {
 
         {/* Job Count */}
         <div className="mb-8">
-          <p className="text-5xl font-extrabold text-white drop-shadow-md">1,200+</p>
           <p className="text-white/80 drop-shadow-md">ตำแหน่งงานว่างสำหรับคุณ</p>
         </div>
 
