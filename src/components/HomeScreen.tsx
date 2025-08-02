@@ -50,25 +50,29 @@ const HomeScreen = () => {
   ];
 
   const renderWelcomeSection = () => {
-    if (user) {
-      return (
-        <Card className="bg-gradient-to-br from-primary to-amber-500 text-white border-0 shadow-lg">
-          <CardHeader>
-            <div className="flex items-center space-x-4">
-              <Avatar className="w-16 h-16 border-4 border-white/50">
-                <AvatarImage src={user.picture} alt={user.name} />
-                <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
-              </Avatar>
-              <div>
-                <CardTitle className="text-2xl">{user.name}</CardTitle>
-                <CardDescription className="text-white/80 flex items-center mt-1">
-                  <MapPin className="h-4 w-4 mr-1.5" />
-                  {location}
-                </CardDescription>
-              </div>
+    const displayName = user ? user.name : 'ผู้เยี่ยมชม';
+    const displayPicture = user ? user.picture : undefined;
+    const fallbackChar = user ? user.name.charAt(0) : 'G';
+
+    return (
+      <Card className="bg-gradient-to-br from-primary to-amber-500 text-white border-0 shadow-lg">
+        <CardHeader>
+          <div className="flex items-center space-x-4">
+            <Avatar className="w-16 h-16 border-4 border-white/50">
+              <AvatarImage src={displayPicture} alt={displayName} />
+              <AvatarFallback>{fallbackChar}</AvatarFallback>
+            </Avatar>
+            <div>
+              <CardTitle className="text-2xl">{displayName}</CardTitle>
+              <CardDescription className="text-white/80 flex items-center mt-1">
+                <MapPin className="h-4 w-4 mr-1.5" />
+                {location}
+              </CardDescription>
             </div>
-          </CardHeader>
-          <CardContent>
+          </div>
+        </CardHeader>
+        <CardContent>
+          {user ? (
             <div className="flex justify-between items-center bg-white/20 p-4 rounded-lg">
               <div>
                 <p className="text-sm text-white/80">ยอดเงินคงเหลือ</p>
@@ -78,19 +82,14 @@ const HomeScreen = () => {
                 ดูรายละเอียด <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
-          </CardContent>
-        </Card>
-      );
-    }
-    return (
-      <Card className="text-center bg-gray-50 border-0">
-        <CardHeader>
-          <CardTitle>ยินดีต้อนรับสู่ Neeiz</CardTitle>
-          <CardDescription>แพลตฟอร์มหางานสำหรับคุณ</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p className="mb-4">เข้าสู่ระบบเพื่อดูโปรไฟล์และจัดการงานของคุณ</p>
-          <Button onClick={() => navigate('/login')}>เข้าสู่ระบบ</Button>
+          ) : (
+            <div className="text-center bg-white/20 p-4 rounded-lg">
+              <p className="mb-3">เข้าสู่ระบบเพื่อดูยอดเงินและจัดการงาน</p>
+              <Button variant="secondary" onClick={() => navigate('/login')}>
+                เข้าสู่ระบบ
+              </Button>
+            </div>
+          )}
         </CardContent>
       </Card>
     );
