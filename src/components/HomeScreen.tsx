@@ -116,13 +116,13 @@ const HomeScreen = () => {
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <Card key={index} className="bg-gray-800/90 text-white p-3 rounded-2xl shadow-lg backdrop-blur-sm">
+              <Card key={index} className="bg-gray-800/90 text-white p-2 rounded-2xl shadow-lg backdrop-blur-sm">
                 <CardContent className="p-0">
-                  <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center justify-between mb-1">
                     <p className="text-sm font-semibold">{stat.title}</p>
                     <Icon className="h-4 w-4 text-gray-400" />
                   </div>
-                  <p className="text-2xl font-bold">{stat.value}</p>
+                  <p className="text-xl font-bold">{stat.value}</p>
                   <p className="text-xs text-gray-400">{stat.description}</p>
                 </CardContent>
               </Card>
