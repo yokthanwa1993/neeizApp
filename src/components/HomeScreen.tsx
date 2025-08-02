@@ -91,11 +91,6 @@ const HomeScreen = () => {
           </div>
         </header>
 
-        {/* Job Count */}
-        <div className="mb-8">
-          <p className="text-white/80 drop-shadow-md">ตำแหน่งงานว่างสำหรับคุณ</p>
-        </div>
-
         {/* Stats Cards */}
         <div className="grid grid-cols-3 gap-3">
           {stats.map((stat, index) => {
