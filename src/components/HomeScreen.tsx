@@ -78,7 +78,7 @@ const HomeScreen = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-400 to-yellow-400 pb-24">
-      <div className="bg-gradient-to-b from-yellow-400/90 via-yellow-400/80 to-yellow-400/60 backdrop-blur-sm rounded-b-[40px] px-6 pt-8 pb-8 text-gray-800 shadow-lg">
+      <div className="px-6 pt-8 pb-8">
         {/* Header */}
         <header className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-3">
@@ -87,8 +87,8 @@ const HomeScreen = () => {
               <AvatarFallback className="bg-yellow-100 text-yellow-600 font-bold">{fallbackChar}</AvatarFallback>
             </Avatar>
             <div>
-              <h1 className="font-bold text-lg text-gray-900">ค้นหางาน</h1>
-              <p className="text-sm text-gray-700">หางานในฝันของคุณ</p>
+              <h1 className="font-bold text-lg text-white drop-shadow-md">ค้นหางาน</h1>
+              <p className="text-sm text-white/80 drop-shadow-md">หางานในฝันของคุณ</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -107,8 +107,8 @@ const HomeScreen = () => {
 
         {/* Job Count */}
         <div className="mb-8">
-          <p className="text-5xl font-extrabold text-gray-900">1,200+</p>
-          <p className="text-gray-700">ตำแหน่งงานว่างสำหรับคุณ</p>
+          <p className="text-5xl font-extrabold text-white drop-shadow-md">1,200+</p>
+          <p className="text-white/80 drop-shadow-md">ตำแหน่งงานว่างสำหรับคุณ</p>
         </div>
 
         {/* Stats Cards */}
