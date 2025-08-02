@@ -99,7 +99,7 @@ const LineLogin: React.FC<LineLoginProps> = ({ onLoginSuccess }) => {
 
   if (isInitializing) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-600 mx-auto mb-4"></div>
           <p className="text-gray-600">กำลังโหลด...</p>
@@ -109,7 +109,7 @@ const LineLogin: React.FC<LineLoginProps> = ({ onLoginSuccess }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-sm mx-auto">
         <div className="bg-white rounded-2xl shadow-lg p-8">
           <div className="text-center mb-8">

@@ -99,7 +99,7 @@ const FullTimeJobs = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen pb-20">
       
 
       {/* Search and Filter Section */}
@@ -158,7 +158,7 @@ const FullTimeJobs = () => {
       </div>
 
       {/* Results Count */}
-      <div className="px-4 py-3 bg-gray-50">
+      <div className="px-4 py-3">
         <p className="text-sm text-gray-600">
           พบงานประจำ {filteredJobs.length} ตำแหน่ง
         </p>

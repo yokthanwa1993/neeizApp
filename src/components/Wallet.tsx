@@ -66,7 +66,7 @@ const Wallet = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen pb-20">
       
       
       {/* Balance Card */}

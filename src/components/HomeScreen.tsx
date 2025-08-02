@@ -96,7 +96,7 @@ const HomeScreen = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-[#57c785] to-primary pb-20">
+    <div className="min-h-screen pb-20">
       <main className="px-6 sm:px-8 lg:px-12 py-6 space-y-6">
         <section>
           {renderWelcomeSection()}

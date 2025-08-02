@@ -303,7 +303,7 @@ const ProfilePage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-yellow-50 pb-20">
+    <div className="min-h-screen pb-20">
       
       
       <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 py-6">

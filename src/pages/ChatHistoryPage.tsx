@@ -63,7 +63,7 @@ const ChatHistoryPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-b from-white via-yellow-50 to-white">
+    <div className="flex flex-col min-h-screen">
       {/* Header */}
       <div className="flex items-center justify-between px-6 pt-8 pb-4">
         <div className="flex-1 text-center">
