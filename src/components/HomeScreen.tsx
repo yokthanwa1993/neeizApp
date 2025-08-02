@@ -5,12 +5,14 @@ import BottomNavigation from './BottomNavigation';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, useCarousel } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '@/components/ui/carousel';
 import { MessageSquare, Bell, Settings, Briefcase, CheckSquare, Bookmark } from 'lucide-react';
 
 const HomeScreen = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
 
   const displayName = user ? user.name : 'Guest';
   const displayPicture = user ? user.picture : 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face';
@@ -48,33 +50,17 @@ const HomeScreen = () => {
       image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=500&fit=crop&crop=center',
     },
   ];
-  
-  const CarouselIndicator = () => {
-    const { api } = useCarousel();
-    const [selectedIndex, setSelectedIndex] = React.useState(0);
 
-    React.useEffect(() => {
-      if (!api) return;
-      setSelectedIndex(api.selectedScrollSnap());
-      api.on("select", () => {
-        setSelectedIndex(api.selectedScrollSnap());
-      });
-    }, [api]);
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
 
-    return (
-      <div className="flex justify-center items-center gap-2 mt-4">
-        {aiMatchedJobs.map((_, index) => (
-          <div
-            key={index}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              index === selectedIndex ? 'w-6 bg-yellow-400' : 'w-2 bg-gray-400/50'
-            }`}
-          />
-        ))}
-      </div>
-    );
-  };
-
+    setCurrent(api.selectedScrollSnap());
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-400 to-yellow-400 pb-24">
@@ -138,7 +124,7 @@ const HomeScreen = () => {
             <h2 className="text-xl font-bold text-white drop-shadow-md">งานที่ AI Matching มา</h2>
             <Button variant="link" className="text-white/80 hover:text-white px-0">ดูทั้งหมด</Button>
           </div>
-          <Carousel opts={{ loop: false, align: "start" }} className="w-full">
+          <Carousel setApi={setApi} opts={{ loop: false, align: "start" }} className="w-full">
             <CarouselContent className="-ml-4">
               {aiMatchedJobs.map((job) => (
                 <CarouselItem key={job.id} className="basis-2/3 md:basis-1/3 pl-4">
@@ -153,8 +139,15 @@ const HomeScreen = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="absolute -bottom-8 w-full">
-               <CarouselIndicator />
+            <div className="flex justify-center items-center gap-2 mt-4">
+              {aiMatchedJobs.map((_, index) => (
+                <div
+                  key={index}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    index === current ? 'w-6 bg-yellow-400' : 'w-2 bg-gray-400/50'
+                  }`}
+                />
+              ))}
             </div>
           </Carousel>
         </section>
