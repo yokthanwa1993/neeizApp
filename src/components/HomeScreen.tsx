@@ -124,7 +124,7 @@ const HomeScreen = () => {
                 <CarouselItem key={job.id} className="basis-2/3 md:basis-1/3 pl-4">
                   <Card className="relative aspect-[3/4] rounded-2xl overflow-hidden border-none shadow-lg">
                     <img src={job.image} alt={job.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-3/4 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
                     <div className="absolute bottom-0 left-0 p-4 text-white">
                       <h3 className="font-bold text-lg drop-shadow-sm">{job.title}</h3>
                       <p className="text-sm text-gray-300 drop-shadow-sm">{job.company}</p>
