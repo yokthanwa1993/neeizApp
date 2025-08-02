@@ -62,7 +62,7 @@ const HomeScreen = () => {
     }, [api]);
 
     return (
-      <div className="flex justify-center items-center gap-2 mt-2">
+      <div className="flex justify-center items-center gap-2 mt-4">
         {aiMatchedJobs.map((_, index) => (
           <div
             key={index}
@@ -75,9 +75,8 @@ const HomeScreen = () => {
     );
   };
 
-
   return (
-    <div className="h-screen flex flex-col bg-gradient-to-br from-teal-400 to-yellow-400 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-teal-400 to-yellow-400 pb-24">
       {/* Top Section */}
       <div className="px-4 pt-6 pb-4">
         {/* Header */}
@@ -133,17 +132,17 @@ const HomeScreen = () => {
       </div>
 
       {/* Main Content */}
-      <main className="flex-1 px-4 pb-4 flex flex-col min-h-0">
-        <section className="flex-1 flex flex-col">
+      <main className="px-4 pb-4">
+        <section>
           <div className="flex justify-between items-center mb-2">
             <h2 className="text-lg font-bold text-white drop-shadow-md">งานที่ AI Matching มา</h2>
             <Button variant="link" className="text-white/80 hover:text-white px-0 text-sm">ดูทั้งหมด</Button>
           </div>
-          <Carousel opts={{ loop: false, align: "start" }} className="w-full flex-1">
-            <CarouselContent className="-ml-2 h-full">
+          <Carousel opts={{ loop: false, align: "start" }} className="w-full">
+            <CarouselContent className="-ml-2">
               {aiMatchedJobs.map((job) => (
                 <CarouselItem key={job.id} className="basis-1/2 pl-2">
-                  <Card className="relative h-full rounded-2xl overflow-hidden border-none shadow-lg">
+                  <Card className="relative aspect-[3/4] rounded-2xl overflow-hidden border-none shadow-lg">
                     <img src={job.image} alt={job.title} className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
                     <div className="absolute bottom-0 left-0 p-3 text-white">
