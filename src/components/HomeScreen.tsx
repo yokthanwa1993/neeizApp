@@ -73,8 +73,8 @@ const HomeScreen = () => {
               <AvatarFallback className="bg-yellow-100 text-yellow-600 font-bold">{fallbackChar}</AvatarFallback>
             </Avatar>
             <div>
-              <h1 className="font-bold text-lg text-white drop-shadow-md">ค้นหางาน</h1>
-              <p className="text-sm text-white/80 drop-shadow-md">หางานในฝันของคุณ</p>
+              <h1 className="font-bold text-lg text-black drop-shadow-md">ค้นหางาน</h1>
+              <p className="text-sm text-gray-700 drop-shadow-md">หางานในฝันของคุณ</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -115,8 +115,8 @@ const HomeScreen = () => {
         {/* AI Matching Section */}
         <section>
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-bold text-white drop-shadow-md">งานที่ AI Matching มา</h2>
-            <Button variant="link" className="text-white/80 hover:text-white px-0">ดูทั้งหมด</Button>
+            <h2 className="text-xl font-bold text-black drop-shadow-md">งานที่ AI Matching มา</h2>
+            <Button variant="link" className="text-gray-700 hover:text-black px-0">ดูทั้งหมด</Button>
           </div>
           <Carousel setApi={setApi} opts={{ loop: false, align: "start" }} className="w-full">
             <CarouselContent className="-ml-4">
