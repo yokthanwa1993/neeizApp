@@ -63,7 +63,7 @@ const HomeScreen = () => {
   }, [api]);
 
   return (
-    <div className="min-h-screen pb-24">
+    <div className="h-screen overflow-y-hidden">
       <div className="px-6 pt-8 pb-8">
         {/* Header */}
         <header className="flex items-center justify-between mb-8">
@@ -111,7 +111,7 @@ const HomeScreen = () => {
         </div>
       </div>
 
-      <main className="px-6 py-6">
+      <main className="px-6 py-6 pb-24">
         {/* AI Matching Section */}
         <section>
           <div className="flex justify-between items-center mb-4">
