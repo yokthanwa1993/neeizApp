@@ -63,7 +63,7 @@ const HomeScreen = () => {
   }, [api]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-400 to-yellow-400 pb-24">
+    <div className="min-h-screen bg-gradient-to-tl from-green-400 to-yellow-400 pb-24">
       <div className="px-6 pt-8 pb-8">
         {/* Header */}
         <header className="flex items-center justify-between mb-8">
