@@ -2,9 +2,10 @@ import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import BottomNavigation from './components/BottomNavigation';
 import HomePage from './pages/HomePage';
+import FullTimeJobs from './pages/FullTimeJobs';
 
 const PlaceholderPage = ({ title }: { title: string }) => (
-  <div className="flex items-center justify-center h-screen text-white text-2xl p-4">
+  <div className="flex items-center justify-center h-[calc(100vh-5rem)] text-white text-2xl p-4">
     <h1>{title}</h1>
   </div>
 );
@@ -21,8 +22,10 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/full-time-jobs" element={<FullTimeJobs />} />
+        
+        {/* หน้าอื่นๆ จะแสดงเป็นหน้าว่างชั่วคราว */}
         <Route path="/jobs" element={<PlaceholderPage title="ค้นหางาน" />} />
-        <Route path="/full-time-jobs" element={<PlaceholderPage title="งานประจำ" />} />
         <Route path="/my-shifts" element={<PlaceholderPage title="งานของฉัน" />} />
         <Route path="/wallet" element={<PlaceholderPage title="กระเป๋าเงิน" />} />
         <Route path="/profile" element={<PlaceholderPage title="โปรไฟล์" />} />
