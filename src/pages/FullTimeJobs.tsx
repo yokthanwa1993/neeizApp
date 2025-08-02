@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
-import { Search, MapPin, Clock, DollarSign, Filter, Star, Bookmark, ChevronRight } from 'lucide-react';
+import React from 'react';
+import { Search, MapPin, Clock, DollarSign, Star, Bookmark, ChevronRight } from 'lucide-react';
 import BottomNavigation from '../components/BottomNavigation';
 
 const FullTimeJobs = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('ทั้งหมด');
-  const [selectedLocation, setSelectedLocation] = useState('ทั้งหมด');
-
   // Mock data for full-time jobs
   const fullTimeJobs = [
     {
@@ -86,87 +82,19 @@ const FullTimeJobs = () => {
     }
   ];
 
-  const categories = ['ทั้งหมด', 'เทคโนโลยี', 'การตลาด', 'การเงิน', 'ขาย', 'ออกแบบ', 'บริหาร'];
-  const locations = ['ทั้งหมด', 'กรุงเทพฯ', 'นนทบุรี', 'ปทุมธานี', 'สมุทรปราการ'];
-
-  const filteredJobs = fullTimeJobs.filter(job => {
-    const matchesSearch = job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         job.company.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === 'ทั้งหมด' || job.category === selectedCategory;
-    const matchesLocation = selectedLocation === 'ทั้งหมด' || job.location === selectedLocation;
-    
-    return matchesSearch && matchesCategory && matchesLocation;
-  });
-
   return (
     <div className="min-h-screen pb-20">
       
-
-      {/* Search and Filter Section */}
-      <div className="bg-white p-4 shadow-sm">
-        {/* Search Bar */}
-        <div className="relative mb-4">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-          <input
-            type="text"
-            placeholder="ค้นหาตำแหน่งงานหรือบริษัท..."
-            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#f5c518] focus:border-transparent"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-        </div>
-
-        {/* Category Filter */}
-        <div className="mb-4">
-          <h3 className="text-sm font-medium text-gray-700 mb-2">หมวดหมู่</h3>
-          <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
-                  selectedCategory === category
-                    ? 'bg-[#f5c518] text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Location Filter */}
-        <div>
-          <h3 className="text-sm font-medium text-gray-700 mb-2">สถานที่</h3>
-          <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-            {locations.map((location) => (
-              <button
-                key={location}
-                onClick={() => setSelectedLocation(location)}
-                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
-                  selectedLocation === location
-                    ? 'bg-[#f5c518] text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-              >
-                {location}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Results Count */}
       <div className="px-4 py-3">
         <p className="text-sm text-gray-600">
-          พบงานประจำ {filteredJobs.length} ตำแหน่ง
+          พบงานประจำ {fullTimeJobs.length} ตำแหน่ง
         </p>
       </div>
 
       {/* Job Listings */}
       <div className="px-4 py-2 space-y-4">
-        {filteredJobs.map((job) => (
+        {fullTimeJobs.map((job) => (
           <div key={job.id} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition-shadow">
             {/* Company Header */}
             <div className="flex items-start justify-between mb-3">
@@ -244,7 +172,7 @@ const FullTimeJobs = () => {
       </div>
 
       {/* Empty State */}
-      {filteredJobs.length === 0 && (
+      {fullTimeJobs.length === 0 && (
         <div className="flex flex-col items-center justify-center py-12 px-4">
           <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
             <Search className="w-12 h-12 text-gray-400" />
