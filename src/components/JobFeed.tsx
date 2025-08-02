@@ -21,7 +21,7 @@ const JobFeed = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white pb-20">
+    <div className="min-h-screen pb-20">
       
 
       <main className="px-6 sm:px-8 lg:px-12 py-6">

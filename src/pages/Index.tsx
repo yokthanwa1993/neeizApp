@@ -15,7 +15,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <div className="min-h-screen p-4">
       <div className="max-w-md mx-auto">
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold mb-2">Gig Marketplace</h1>
@@ -72,7 +72,7 @@ const Index = () => {
           <h2 className="font-bold text-xl mb-4 text-center">เกี่ยวกับ Gig Marketplace</h2>
           <p className="text-gray-700 mb-4">
             Gig Marketplace เป็นแพลตฟอร์มที่เชื่อมโยงผู้ที่ต้องการทำงานแบบฟรีแลนซ์กับผู้ที่ต้องการจ้างงาน 
-            ช่วยให้คุณสามารถค้นหางานที่เหมาะสมกับทักษะของคุณได้ง่ายๆ
+            ช่วยให้คุณสามารถค้นหาและสมัครงานที่เหมาะสมกับทักษะของคุณได้ง่ายๆ
           </p>
           <p className="text-gray-700">
             ไม่ว่าจะเป็นงานบริการ งานด้านอาหาร เว้นความสะอาด หรืองานด้านขนส่ง 
